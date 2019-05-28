@@ -86,7 +86,7 @@ $(document).ready(doSearch);
 <p><button onclick="myFunction()">按一下</button></p>
 <p id="demo"></p>
 <p></p>
-<script>
+<script>// <![CDATA[
 // <![CDAIA[
 //<![CDATA[
 function myFunction() {
@@ -94,29 +94,29 @@ function myFunction() {
  //document.getElementById("demo").innerHTML ="你還真的按喔";
  //alert("你還真的按喔");
 }
-</script>
+// ]]></script>
 <p><br/><br/><br/><br/></p>
 <p></p>
 <!-- 啟動 Brython -->
-<script>
+<script>// <![CDATA[
 window.onload=function(){
 // 設定 data/py 為共用程式路徑
 brython({debug:1, pythonpath:['./../data/py']});
 }
-</script>
+// ]]></script>
 <!-- 導入 Brython 標準程式庫 -->
 <script src="./../static/brython.js"></script>
 <script src="./../static/brython_stdlib.js"></script>
 <p></p>
 <!-- 啟動 Brython -->
-<script>
+<script>// <![CDATA[
 window.onload=function(){
 // 設定 data/py 為共用程式路徑
 brython({debug:1, pythonpath:['./../data/py']});
 }
-</script>
+// ]]></script>
 <p><canvas height="400" id="plotarea" width="600"></canvas></p>
-<script type="text/python">
+<script type="text/python">// <![CDATA[
 # 導入 doc
 from browser import document as doc
 import math
@@ -168,4 +168,4 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script><br />報告主旨 << <a href='報告主旨.html'>Previous</a> </div></section></div></body></html>
+// ]]></script><br />報告主旨 << <a href='報告主旨.html'>Previous</a> </div></section></div></body></html>
