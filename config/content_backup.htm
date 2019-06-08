@@ -27,89 +27,6 @@
 <p><img alt="" height="212" src="/images/chrome_tV1Lsh7qG7.png" width="400"/></p><h1>報告主旨</h1>
 <p></p>
 <p><span>1. 是否已經在自己的隨身碟建立隨身程式系統?</span><br/><br/><span>此一隨身系統以</span><a href="https://drive.google.com/open?id=1_TQBw1PM7jxrmtsBjvLKbjJWfGs8Ug79"><span> </span>2019_cdb_w5.7z</a><span><span> </span>為基礎, 使用者必須會自行查驗</span><br/><br/><span>    是否已經將 portablegit 中的 helper = manager 的設定移除?</span><br/><span>     python 是否已經安裝 flask, bs4 與 lxml 模組?</span><br/><span>    是否了解 git 以 https 連線時, proxy 將採用那一個檔案中的設定?</span><br/><span>    是否已經學會如何採用 ssh 模式維護 github 上的倉儲?</span><br/><span>    是否了解 CMSimfly 動態與靜態系統之間的關係?</span><br/><span>    是否會在 CMSimfly 中上傳檔案, 引用檔案?</span><br/><span>    是否會在 CMsimfly 中上傳圖檔, 引用圖檔?</span><br/><span>    是否會在 CMSimfly 中嵌入 Youtube 影片?</span><br/><span>    是否會在 CMSimfly 頁面中加入 Javascript 互動程式?</span><br/><span>    是否會更改 CMsimfly 靜態系統所使用的模板?</span><br/><span>    是否能將 USB 隨身碟格式為 NTFS 或 extFAT, 以便放入 Ubuntu 虛擬主機檔案?</span><br/><span>    是否會使用自己隨身碟中的 Virtualbox 與 Ubuntu 中的 Fossil SCM 來伺服靜態 CMSimfly 檔案?</span><br/><span>    是否會使用自己隨身碟中的 Virtualbox 與 Ubuntu 中的 uwsgi 來伺服動態 CMSimfly 系統?</span><br/><br/><span>2. 是否已經根據各上述階段任務的操作拍成說明影片, 嵌入自己的 Github Pages 網站?</span><br/><br/><span>3. 是否已經著手執行各學員的期末專案, 是否了解各學員的期末報告, 必須同時呈現 html 與 pdf 版本.</span><br/><br/></p>
-<h1>抽數字</h1>
-<p></p>
-<p></p>
-<p></p>
-<div class="line number1 index0 alt2"><code class="html plain"></code></div>
-<p><button onclick="myFunction()">按一下</button></p>
-<p id="demo"></p>
-<p></p>
-<script>
-// <![CDAIA[
-//<![CDATA[
-function myFunction() {
- document.getElementById("demo").innerHTML = Math.floor(Math.random()*50+1);
- //document.getElementById("demo").innerHTML ="你還真的按喔";
- //alert("你還真的按喔");
-}
-</script>
-<p></p>
-<!-- 導入 Brython 標準程式庫 -->
-<script src="/get_page/cmsimde/static/brython.js"></script>
-<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
-<p></p>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-// 設定 data/py 為共用程式路徑
-brython({debug:1, pythonpath:['./../data/py']});
-}
-</script>
-<p><canvas height="400" id="plotarea" width="600"></canvas></p>
-<script type="text/python">
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["plotarea"]
-ctx = canvas.getContext("2d")
-# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-# 以下採用 canvas 原始座標繪圖
-flag_w = canvas.width
-flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
-# 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
-# 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
-# 畫十二道光芒白日
-ctx.beginPath()
-star_radius = flag_w/8
-angle = 0
-for i in range(24):
-    angle += 5*math.pi*2/12
-    toX = circle_x + math.cos(angle)*star_radius
-    toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
-    if (i):
-        ctx.lineTo(toX, toY)
-    else:
-        ctx.moveTo(toX, toY)
-ctx.closePath()
-# 將填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-# 白日:藍圈
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為藍色
-ctx.fillStyle = 'rgb(0, 0, 149)'
-ctx.fill()
-# 白日:白心
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-</script>
 <h1>Javascript 程式</h1>
 <div class="line number1 index0 alt2"><code class="html plain"></code></div>
 <p><button onclick="myFunction()">按一下</button></p>
@@ -143,7 +60,7 @@ function myFunction() {
 <h1>網路連線設定</h1>
 <p><span>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.</span><br/><br/><span>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.</span><br/><br/><span>瀏覽器代理主機設定</span><br/><br/><span>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.</span><br/><br/><span>申請 Github 帳號</span><br/><br/><span>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</span></p>
 <h1>倉儲改版</h1>
-<h1>ROC Flag</h1>
+<p><span>建立 Git 倉儲, 並 clone 倉儲至近端工作後, 對遠端倉儲改版</span><br/><br/><span>可攜程式系統中已經內建 git, 可以在啟動 start.bat 後, 透過 path 的設定, 直接執行 git 指令.</span><br/><br/><span>建立 Git 倉儲, 共分為兩類, 一類是直接在 Github 網際介面下建立倉儲時, 要求建立 README.md 檔案, 之後可以直接在近端, 以 git clone 加上倉儲連線 URL, 將倉儲克隆一份到近端, 並以最新版本作為工作目錄, 使用者改版後, 可以直接透過 git add, commit 與 push 對遠端倉儲改版.</span><br/><br/><span>另一類則是故意在 Github 網際介面下建立倉儲時, 不要建立任何檔案, 而是在近端自行利用 git 指令建立倉儲架構, 新增內容後, 以 git remote add 設法在近端倉儲中納入 origin URL 後, 將近端倉儲版本新增提交推送到遠端.</span><br/><br/><span>git add</span><span>(在近端,無需proxy)</span><br/><br/><span>git add 可以用來新增一個檔案, 數個檔案, 或在之前提交後所新增的所有內容.</span><br/><br/><span>git add 在 GIT 架構下, 是對所新增或修改的內容</span><span>拍快照</span><span>:</span><br/><br/><span>git add . adds all modified and new (untracked) files in the current directory and all subdirectories to the staging area (a.k.a. the index), thus preparing them to be included in the next git commit . Any files matching the patterns in the .gitignore file will be ignored by git add</span><br/><br/><span>git commit</span><span> <span>(在近端,無需proxy)</span></span><br/><br/><span>git commit 執行之前, 必須</span><span>使用 git config 建立臨時或永久的身分註記</span><span>, 因為 GIT 在展開所有改版內容時, 必須明確登錄這些變更的作者與時間.</span><br/><br/><span>當使用者採用 git commit -m "改版說明訊息", 此次提交到 .git 目錄下的更動內容, 均會綁定使用者身分與改版所輸入的說明訊息.</span><br/><br/><span>git push</span><span>(用何協定是由倉儲" .git"內的config的url所決定的)</span><br/><br/><span>git push 在隨後沒有輸入遠端 URL 代號時, 表示要推送到 origin, 若透過 git remote add 設定其他代號與 URL 對應時, git push 加上代號, 就可以將此次的提交內容, 推送到指定的 URL 所在遠端倉儲.</span></p><h1>ROC Flag</h1>
 <!-- 導入 Brython 標準程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -493,5 +410,237 @@ function draw2mid() {
 </script>
 <p><canvas height="300" id="canvas" width="400"> Your browser doesn't support the HTML5 element canvas. </canvas> <br/> <button onclick="throwdice();">Throw dice </button></p>
 <form id="f" name="f">Stage: <input name="stage" type="text" value="First Throw"/> Point: <input name="pv" type="text" value="   "/> Outcome: <input name="outcome" type="text" value="     "/></form>
-<h1>期中影片</h1>
+<h1>OOXX</h1>
+<script language="Javascript">
+var turn = 0;
+
+function playRound(objDest)
+{
+  if(objDest.innerText == " " && turn == 0)
+  {  
+    objDest.innerText = "O";
+    turn = 1;
+  }
+  else if(objDest.innerText == " " && turn == 1)
+  {
+    objDest.innerText = "X";
+    turn = 0;
+  }
+  else
+  {
+    confirm("方塊已經被佔用了!");
+  }
+
+  if(checkRow())
+  {
+    if(turn == 0)
+    {
+      if(confirm("玩家2贏了!\n\n要再玩一場嗎?"))
+        clearTable();
+    }
+    else if(turn == 1)
+    {
+      if(confirm("玩家1贏了!\n\n要再玩一場嗎?"))
+        clearTable();
+    }
+  }
+  else if(tableIsFull())
+  {
+    if(confirm("平手\n\n要再玩一場嗎?"))
+      clearTable();
+  }
+}
+
+
+
+function clearTable()
+{
+  for(i=0; i<=2; i++)  
+  {
+    eval("ttt" + i + "0" + ".innerHTML = '&nbsp;';")
+    eval("ttt" + i + "1" + ".innerHTML = '&nbsp;';")
+    eval("ttt" + i + "2" + ".innerHTML = '&nbsp;';")
+  }
+
+}
+
+
+function checkRow()
+{
+
+  for(i=0; i<=2; i++)
+  {  
+
+    // 列
+    if(eval("compare("+"ttt"+i+"0"+","+"ttt"+i+"1"+","+"ttt"+i+"2"+")"))
+      return true;
+      
+  
+    // 對角線
+    if(eval("compare("+"ttt"+"0"+i+","+"ttt"+"1"+"1"+","+"ttt"+"2"+(2-i)+")"))
+      return true;
+
+    // 欄
+    if(eval("compare("+"ttt"+"0"+i+","+"ttt"+"1"+i+","+"ttt"+"2"+i+")"))
+      return true;
+
+  }
+  return false;
+}
+
+function tableIsFull()
+{
+  for(i=0; i<=2; i++)
+    for(j=0; j<=2; j++)
+      if(eval("ttt" + i + j).innerText == " ")
+        return false;
+  return true;
+}
+
+function compare(obj0, obj1, obj2)
+{
+  if(obj0.innerText != " " && obj1.innerText != " " && obj2.innerText != " ")
+    if(obj0.innerText == obj1.innerText && obj1.innerText == obj2.innerText)
+      return true;
+
+  return false;  
+}
+</script>
+<h3>井字遊戲</h3>
+<p>玩家1: O<br/> 玩家2: X<br/><br/></p>
+<table border="1" bordercolor="#000000" style="border-collapse: collapse; width: 150px; height: 150px;">
+<tbody>
+<tr>
+<td align="center" id="ttt00" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt01" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt02" onclick="playRound(this);" width="50"> </td>
+</tr>
+<tr>
+<td align="center" id="ttt10" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt11" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt12" onclick="playRound(this);" width="50"> </td>
+</tr>
+<tr>
+<td align="center" id="ttt20" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt21" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt22" onclick="playRound(this);" width="50"> </td>
+</tr>
+</tbody>
+</table><h3>井字遊戲</h3>
+<script language="Javascript">
+var turn = 0;
+
+function playRound(objDest)
+{
+  if(objDest.innerText == " " && turn == 0)
+  {  
+    objDest.innerText = "O";
+    turn = 1;
+  }
+  else if(objDest.innerText == " " && turn == 1)
+  {
+    objDest.innerText = "X";
+    turn = 0;
+  }
+  else
+  {
+    confirm("方塊已經被佔用了!");
+  }
+
+  if(checkRow())
+  {
+    if(turn == 0)
+    {
+      if(confirm("玩家2贏了!\n\n要再玩一場嗎?"))
+        clearTable();
+    }
+    else if(turn == 1)
+    {
+      if(confirm("玩家1贏了!\n\n要再玩一場嗎?"))
+        clearTable();
+    }
+  }
+  else if(tableIsFull())
+  {
+    if(confirm("平手\n\n要再玩一場嗎?"))
+      clearTable();
+  }
+}
+
+
+
+function clearTable()
+{
+  for(i=0; i<=2; i++)  
+  {
+    eval("ttt" + i + "0" + ".innerHTML = '&nbsp;';")
+    eval("ttt" + i + "1" + ".innerHTML = '&nbsp;';")
+    eval("ttt" + i + "2" + ".innerHTML = '&nbsp;';")
+  }
+
+}
+
+
+function checkRow()
+{
+
+  for(i=0; i<=2; i++)
+  {  
+
+    // 列
+    if(eval("compare("+"ttt"+i+"0"+","+"ttt"+i+"1"+","+"ttt"+i+"2"+")"))
+      return true;
+      
+  
+    // 對角線
+    if(eval("compare("+"ttt"+"0"+i+","+"ttt"+"1"+"1"+","+"ttt"+"2"+(2-i)+")"))
+      return true;
+
+    // 欄
+    if(eval("compare("+"ttt"+"0"+i+","+"ttt"+"1"+i+","+"ttt"+"2"+i+")"))
+      return true;
+
+  }
+  return false;
+}
+
+function tableIsFull()
+{
+  for(i=0; i<=2; i++)
+    for(j=0; j<=2; j++)
+      if(eval("ttt" + i + j).innerText == " ")
+        return false;
+  return true;
+}
+
+function compare(obj0, obj1, obj2)
+{
+  if(obj0.innerText != " " && obj1.innerText != " " && obj2.innerText != " ")
+    if(obj0.innerText == obj1.innerText && obj1.innerText == obj2.innerText)
+      return true;
+
+  return false;  
+}
+</script>
+<h3>井字遊戲</h3>
+<p>玩家1: O<br/> 玩家2: X<br/><br/></p>
+<table border="1" bordercolor="#000000" style="border-collapse: collapse; width: 150px; height: 150px;">
+<tbody>
+<tr>
+<td align="center" id="ttt00" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt01" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt02" onclick="playRound(this);" width="50"> </td>
+</tr>
+<tr>
+<td align="center" id="ttt10" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt11" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt12" onclick="playRound(this);" width="50"> </td>
+</tr>
+<tr>
+<td align="center" id="ttt20" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt21" onclick="playRound(this);" width="50"> </td>
+<td align="center" id="ttt22" onclick="playRound(this);" width="50"> </td>
+</tr>
+</tbody>
+</table><h1>期中影片</h1>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/TPrzvdreQzE" width="560"></iframe></p>
